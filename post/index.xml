@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on A Asit Mahato</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on A Asit Mahato</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Jul 2017 14:14:49 +0530</lastBuildDate>
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AMORTIZED ANALYSIS</title>
+      <link>/post/2017/07/24/amortized-analysis/</link>
+      <pubDate>Mon, 24 Jul 2017 14:14:49 +0530</pubDate>
+      
+      <guid>/post/2017/07/24/amortized-analysis/</guid>
+      <description>What is Amortized Analysis? Amortized analysis means analyzing time-averaged cost for a sequence of operations. It doesn&amp;rsquo;t provide any information of a single operation int that sequence.
+Purpose: To have a better idea of total running time of a longer job. Calculated in relation to a batch of calls to the process.
+Note: This is different from our usual notion of &amp;ldquo;average case anyalysis&amp;rdquo; &amp;ndash; we are not making any input being chosen at random.</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning 1</title>
+      <link>/post/2017/07/16/machine-learning-1/</link>
+      <pubDate>Sun, 16 Jul 2017 20:34:13 +0530</pubDate>
+      
+      <guid>/post/2017/07/16/machine-learning-1/</guid>
+      <description>You have heard peoples talking about machine learning. But your understaning about ML may not be clear after reading the wikipedia article. You are tired of nodding your head through conversations. Lets change it.
+What is machine learning? Machine learing is an algorithm which learns from experience instead of hard coded rules. Instead of writting code for every rules you will feed data to the generic algorithm(classifier) and it will build own logic from the supplied data.</description>
+    </item>
+    
+  </channel>
+</rss>

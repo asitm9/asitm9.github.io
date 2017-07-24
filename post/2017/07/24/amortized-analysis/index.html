@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AMORTIZED ANALYSIS | A Asit Mahato</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">AMORTIZED ANALYSIS</span></h1>
+
+<h2 class="date">2017/07/24</h2>
+</div>
+
+<main>
+
+
+<h3 id="what-is-amortized-analysis">What is Amortized Analysis?</h3>
+
+<p>Amortized analysis means analyzing time-averaged cost for a sequence of operations. It doesn&rsquo;t provide any information of a single operation int that sequence.</p>
+
+<p><strong>Purpose:</strong> To have a better idea of total running time of a longer job.  Calculated in relation to a batch of calls to the process.</p>
+
+<p><strong>Note:</strong> This is different from our usual notion of &ldquo;average case anyalysis&rdquo; &ndash; we are not making any input being chosen at random. Here we&rsquo;re just averaging over total time.</p>
+
+<p>There are going to be three approaches that we call:</p>
+
+<p><strong>Aggregate method</strong></p>
+
+<p><strong>Accounting method(Banker&rsquo;s method)</strong></p>
+
+<p><strong>Potential method(physicist&rsquo;s method)</strong></p>
+
+<h3 id="aggregate-method">Aggregate method</h3>
+
+<hr />
+
+<p>In aggregate analysis, there are two steps. First, we must show that a sequence of <code>n</code> operation takes <code>T(n)</code> time in the worst case. Then, we show that each operation takes <code>T(n)/n</code>.</p>
+
+<p>A common example of aggregate analysis is stack&rsquo;s operations. Stack have two <code>O(n)</code> operations. <code>Push(elel)</code> puts an element on the top and <code>pop()</code> takes the top element off of the stack. As the operations are both constant time, so a total of <code>n</code> operations will result in <code>O(n)</code> total time.</p>
+
+<p>Now, a new operation is added to the stack. <code>multipop(k)</code> will either pop the top <code>k</code> elements int the stack or if it runs out of elements before that it will pop all the elements in the stack and stop.</p>
+
+<pre><code>multipop(k):
+    while stack not empty and k&gt;0:
+        k = k-1
+        stack.pop()
+
+</code></pre>
+
+<p>The worst-case cost of a <code>multipop</code> operation in the sequence is <code>O(n)</code>, since the stack size is at most <code>n</code>. The worst case time of any stack operation is <code>O(n)</code>, and hence a sequence of <code>n</code> operations cost <code>O(n^2)</code>.</p>
+
+<p>However that&rsquo;s not the case. <code>multipop</code> cannot function unless there&rsquo;s been a push to the stack because it would have nothing to pop off. So After pushing <code>n</code> elements to the stack, the number of times <code>pop</code> can be called including calls within <code>multipop</code> is <code>n</code>. For any value of <code>n</code>, any sequence of <code>n</code>   <code>push, pop</code> and <code>multipop</code> takes a total time of <code>O(n)</code> time.</p>
+
+<p>The amortized cost of an operation is the average : <code>O(n)/n=O(1)</code></p>
+
+</main>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script> 
+
